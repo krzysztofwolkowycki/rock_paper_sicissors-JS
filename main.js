@@ -55,6 +55,11 @@ function showReult(player, ai, result){
     }
 
 }
+function endGame(){
+    document.querySelector(`[data-option="${game.playerHand}"]`).style.boxShadow = '';
+    game.playerHand = '';
+    game.ai = '';
+}
 
 
 function startGame(){
@@ -65,6 +70,7 @@ function startGame(){
     aiChoice();
     const result = checkResult(game.playerHand, game.aiHand);
     showReult(game.playerHand, game.aiHand, result);
+    endGame();
 }
 
 
